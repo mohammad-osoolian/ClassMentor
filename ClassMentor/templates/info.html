@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .form{
+        border: 2px solid #243743;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      .topic{
+        text-align: center;
+        color: #243743;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        /* background-color: #243743; */
+        margin-bottom: 10pt;
+        padding: 5px;
+      }
+      h1{
+        color: #243743;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+      }
+      h2{
+        color: #243743;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+      }
+      p{
+        text-align: left;
+        color: #243743;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+      }
+      .form_marks{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        background-color: #28B78D;
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        padding: 5px;
+      }
+      .form_comments{
+        color: #243743;
+        padding: 3px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+      }
+      .ostad_info{
+        border: 2px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body style="background-color:whitesmoke;">
+    <div class="container" style="background-color: white; padding-top: 10px; padding-bottom: 10px;"> 
+      <!-- <h1 class="topic">informations</h1> -->
+      <div class="ostad_info">
+        <h1>{{ ostad }}</h1>
+        <p>nomre: {{ avgnomre }} </p>
+        <p>tadris: {{avgtadris}}</p>
+        <p>akhlagh: {{avgakhlagh}}</p>
+        <p>biography...............<br>...<br>..<br>.<br>.<br>.</p>
+        </div>
+      <a name="mainpage" id="mainpage" class="btn btn-primary" href="{% url 'intro' %}" role="button" style="border: 0px; color: white; margin: 10px; margin-top: 30px;">Home Page</a><br><br>
+      <h2 style="text-align: center;">Comments:</h2>
+      {% for form in allforms %}
+        {% if form.detailes != '' %}
+          <div class="form">
+            <p class="form_marks">
+              <!-- write stars for tadris -->
+              {% if form.tadris == 1 %}
+              tadris: &#11088
+              {% elif form.tadris == 2 %}
+              tadris: &#11088&#11088
+              {% elif form.tadris == 3 %}
+              tadris: &#11088&#11088&#11088
+              {% elif form.tadris == 4 %}
+              tadris: &#11088&#11088&#11088&#11088
+              {% else %}
+              tadris: &#11088&#11088&#11088&#11088&#11088
+              {% endif %}
+              <!-- write starts for nomre -->
+              {% if form.nomre == 1 %}
+              nomre: &#11088
+              {% elif form.nomre == 2 %}
+              nomre: &#11088&#11088
+              {% elif form.nomre == 3 %}
+              nomre: &#11088&#11088&#11088
+              {% elif form.nomre == 4 %}
+              nomre: &#11088&#11088&#11088&#11088
+              {% else %}
+              omre: &#11088&#11088&#11088&#11088&#11088
+              {% endif %}
+              <!-- write stars for akhlagh -->
+              {% if form.akhlagh == 1 %}
+              akhlagh: &#11088
+              {% elif form.akhlagh == 2 %}
+              akhlagh: &#11088&#11088
+              {% elif form.akhlagh == 3 %}
+              akhlagh: &#11088&#11088&#11088
+              {% elif form.akhlagh == 4 %}
+              akhlagh: &#11088&#11088&#11088&#11088
+              {% else %}
+              akhlagh: &#11088&#11088&#11088&#11088&#11088
+              {% endif %}
+              <!-- write stars for 
+              {% if form. == 1 %}
+              : &#11088
+              {% elif form. == 2 %}
+              : &#11088&#11088
+              {% elif form. == 3 %}
+              : &#11088&#11088&#11088
+              {% elif form. == 4 %}
+              : &#11088&#11088&#11088&#11088
+              {% else %}
+              : &#11088&#11088&#11088&#11088&#11088
+              {% endif %} -->
+            </p>
+            <p class="form_comments">{{ form.detailes }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </body>
+</html>

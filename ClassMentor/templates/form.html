@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1. p/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+    <form action="{% url 'form' %}" method="POST">
+      <div class="form-group">
+        <label for="ostad">choose one ostad</label>
+        <select class="custom-select" name="ostad" id="ostad">
+          <option selected>Select one</option>
+          <option value="SaulehEtemadi">Sauleh Etemadi</option>
+          <option value="MohammadZahedimoghaddam">Mohammad Zahedimoghaddam</option>
+          <option value="MahboobehTaghizade">Mahboobeh Taghizade</option>
+          <option value="ElhamFattahi">Elham Fattahi</option>
+          <option value="MahboobehTaghizade">Zeynab Movahedi</option>
+          <option value="MarziehMaleki">Marzieh Maleki</option>
+        </select>
+      </div>
+      <p>give numbers from 1 to 5 for:</p>
+      <div class="form-group">
+        <label for="tadris">tadris</label>
+        <input type="number" name="tadris" id="tadris" class="form-control" min="1" max="5">
+      </div>
+      <div class="form-group">
+        <label for="nomre">nomre</label>
+        <input type="number" name="nomre" id="tadris" class="form-control" min="1" max="5">
+      </div>
+      <div class="form-group">
+        <label for="akhlagh">akhlagh</label>
+        <input type="number" name="akhlagh" id="akhlagh" class="form-control" min="1" max="5">
+      </div>
+      <div class="form-group">
+        <label for="detailes">write detailes here</label>
+        <textarea class="form-control" name="detailes" id="ditailes" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
